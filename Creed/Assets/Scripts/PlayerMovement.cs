@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/* 
+ * Project: Creed and the Vow of Vengeance
+ * Joseph W. Alex A. Cameron O. Kheta K.
+ * Description: This script allows for our character to 
+ *      move, and to know when on the ground
+ * Date: February 2021
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
