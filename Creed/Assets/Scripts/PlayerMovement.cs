@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayers;
     float mx; //movement along x-axis
     public Animator animator;
+    public SpriteRenderer sr;
 
     private void Update()
     {
@@ -31,15 +32,31 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Mathf.Abs(mx) > 0.05f)
         {
+            //conditional for animation to run
             animator.SetBool("isRunning", true);
 
         }
         else
         {
+            //conditional for run animation
             animator.SetBool("isRunning", false);
         }
 
+        //conditional for jump animation
         animator.SetBool("isGrounded", IsGrounded());
+
+        if (mx > 0.0f)
+        {
+            // flips the direction to right
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            
+        }
+        if ( mx < 0.0f)
+        {
+           //flips the direction to left
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            
+        }
     }
 
     
