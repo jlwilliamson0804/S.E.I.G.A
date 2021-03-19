@@ -17,17 +17,32 @@ public class PlayerMovement : MonoBehaviour
     public Transform feet;
     public LayerMask groundLayers;
     float mx; //movement along x-axis
-    
+    public Animator animator;
 
     private void Update()
     {
+        
         mx = Input.GetAxisRaw("Horizontal"); //get input of x axis
+        //animator.SetFloat("Speed", Mathf.Abs(mx));
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {
             Jump();
+            
+        }
+        if(Mathf.Abs(mx) > 0.05f)
+        {
+            animator.SetBool("isRunning", true);
+
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
         }
 
+        animator.SetBool("isGrounded", IsGrounded());
     }
+
+    
 
     private void FixedUpdate()
     {
@@ -42,19 +57,21 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
         rb.velocity = movement;
+        
     }
 
     //must be touching the ground to be able to jump
     public bool IsGrounded()
     {
         Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0.5f, groundLayers);
+        
 
         if(groundCheck != null)
         {
+            
             return true;
         }
         return false;
     }
-
 
 }
