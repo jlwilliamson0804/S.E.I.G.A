@@ -17,9 +17,7 @@ public class EnemyHorizontal : MonoBehaviour
     // Use this for initialization
     void Update()
     {
-        //GetComponent<Rigidbody2D>().velocity = Vector2.right * speed;
-        //Switch every few seconds
-        //InvokeRepeating("Switch", 0, switchTime);
+        
 
         //if moving to the right, pace, and right facing images
         if(GoingRight)
@@ -48,9 +46,18 @@ public class EnemyHorizontal : MonoBehaviour
             }
             else GoingRight = true; // now go right
         }
-    }    
+    }
 
-   
+    //blocks the player from pushing the enemy, enemy can push player
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Player")
+        {
+            Rigidbody2D rg = GetComponent<Rigidbody2D>();
+            rg.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+    }
+
 
     void Switch()
     {
