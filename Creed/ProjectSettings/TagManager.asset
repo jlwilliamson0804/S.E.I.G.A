@@ -8,6 +8,11 @@ TagManager:
   - ground
   - wall
   - turn_around
+  - boss
+  - CP
+  - GM
+  - EndLevel1
+  - EndTutorial
   layers:
   - Default
   - TransparentFX

@@ -12,9 +12,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+   static public int multiplier=1;
+
     public void PlayGame() // function for our play button
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Loads the next scene in the build order
+        SceneManager.LoadScene("Level1"); // Loads the next scene in the build order
+    }
+    public void PlayTutorial()
+    {
+        SceneManager.LoadScene("Tutorial"); // Loads the tutorial
     }
 
     public void QuitGame() // function for quit button
@@ -22,5 +28,22 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void EasyGame()
+    {
+        multiplier = 1;
+    }
+
+    public void MediumGame()
+    {
+        multiplier = 2;
+    }
+
+    public void HardGame()
+    {
+        multiplier = 3;
+    }
 
 }
+
+
+

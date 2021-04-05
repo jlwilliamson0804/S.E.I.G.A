@@ -26,13 +26,13 @@ public class Projectile : MonoBehaviour
     void OnTriggerEnter2D (Collider2D hit)
     {
       EnemyMain enemy = hit.GetComponent<EnemyMain>();
-      if(hit.tag == "wall")
+      if(hit.tag == "wall" && hit != null)
         {
             Destroy(gameObject);
         }
 
 
-      if(enemy.gameObject.tag == "enemy")
+      if(enemy.gameObject.tag == "enemy" || enemy.gameObject.tag == "boss")
         {
             enemy.LoseHealth(damageAmount);
             Destroy(gameObject);

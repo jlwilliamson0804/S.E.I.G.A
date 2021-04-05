@@ -17,18 +17,35 @@ public class EnemyHorizontal : MonoBehaviour
     // Use this for initialization
     void Update()
     {
-        
 
-        //if moving to the right, pace, and right facing images
-        if(GoingRight)
+        if (gameObject.tag == "enemy")
         {
-            transform.Translate(2 * Time.deltaTime * speed, 0, 0);
-            transform.localScale = new Vector2(1, 1);
+            //if moving to the right, pace, and right facing images
+            if (GoingRight)
+            {
+                transform.Translate(2 * Time.deltaTime * speed, 0, 0);
+                transform.localScale = new Vector2(1, 1);
+            }
+            else //going left, pace, and left facing images
+            {
+                transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
+                transform.localScale = new Vector2(-1, 1);
+            }
         }
-        else //going left, pace, and left facing images
+
+        else if(gameObject.tag == "boss")
         {
-            transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
-            transform.localScale = new Vector2(-1, 1);
+            //if moving to the right, pace, and right facing images
+            if (GoingRight)
+            {
+                transform.Translate(2 * Time.deltaTime * speed, 0, 0);
+                transform.localScale = new Vector2(3, 3);
+            }
+            else //going left, pace, and left facing images
+            {
+                transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
+                transform.localScale = new Vector2(-3, 3);
+            }
         }
 
 
