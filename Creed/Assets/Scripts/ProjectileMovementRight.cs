@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/* 
+ * Project: Creed and the Vow of Vengeance
+ * Joseph W. Alex A. Cameron O. Kheta K.
+ * Description: This script is unused at the moment, but can be used for 
+ * ranged projectile attacks
+ * Date: April 2021
+ */
+using UnityEngine;
 using System.Collections;
 
 public class ProjectileMovementRight: MonoBehaviour

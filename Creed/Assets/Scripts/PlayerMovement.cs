@@ -19,10 +19,13 @@ public class PlayerMovement : MonoBehaviour
     float mx; //movement along x-axis
     public Animator animator;
     public SpriteRenderer sr;
+    public PlayerMain myPlayer;
+    
 
     private void Update()
     {
         
+
         mx = Input.GetAxisRaw("Horizontal"); //get input of x axis
         //animator.SetFloat("Speed", Mathf.Abs(mx));
         if(Input.GetButtonDown("Jump") && IsGrounded())
@@ -34,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //conditional for animation to run
             animator.SetBool("isRunning", true);
-
+            
         }
         else
         {
@@ -57,6 +60,9 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
             
         }
+
+        
+
     }
 
     

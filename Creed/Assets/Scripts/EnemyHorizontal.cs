@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/* 
+ * Project: Creed and the Vow of Vengeance
+ * Joseph W. Alex A. Cameron O. Kheta K.
+ * Description: This script is used to allow the enemies to patrol a designated area
+ * and have different attributes based upon tag
+ * Date: April 2021
+ */
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 

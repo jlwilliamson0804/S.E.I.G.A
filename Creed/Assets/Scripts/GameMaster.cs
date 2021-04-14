@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/* 
+ * Project: Creed and the Vow of Vengeance
+ * Joseph W. Alex A. Cameron O. Kheta K.
+ * Description: This script is used in conjuction with another to save checkpoints
+ * creates position if null but destroys if already exists
+ * Date: April 2021
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

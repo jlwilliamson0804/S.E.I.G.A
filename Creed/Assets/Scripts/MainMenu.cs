@@ -28,6 +28,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    //the following are multipliers for difficulty system
     public void EasyGame()
     {
         multiplier = 1;

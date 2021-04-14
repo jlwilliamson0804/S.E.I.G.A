@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/* 
+ * Project: Creed and the Vow of Vengeance
+ * Joseph W. Alex A. Cameron O. Kheta K.
+ * Description: This script is unused at the time, can be used if we have flying enemies
+ */
+using UnityEngine;
 using System.Collections;
 
 public class EnemyVerticle: MonoBehaviour

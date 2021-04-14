@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/* 
+ * Project: Creed and the Vow of Vengeance
+ * Joseph W. Alex A. Cameron O. Kheta K.
+ * Description: This script is for the ranged attack
+ *  and if it hits specific tags
+ * Date: April 2021
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,13 +35,13 @@ public class Projectile : MonoBehaviour
       EnemyMain enemy = hit.GetComponent<EnemyMain>();
       if(hit.tag == "wall" && hit != null)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //so it doesn't pass through walls
         }
 
 
       if(enemy.gameObject.tag == "enemy" || enemy.gameObject.tag == "boss")
         {
-            enemy.LoseHealth(damageAmount);
+            enemy.LoseHealth(damageAmount); // damages the enemy
             Destroy(gameObject);
         }
       

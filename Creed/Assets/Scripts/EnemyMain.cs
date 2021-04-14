@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/* 
+ * Project: Creed and the Vow of Vengeance
+ * Joseph W. Alex A. Cameron O. Kheta K.
+ * Description: This script is used to give enemies functionality and attributes
+ * Date: April 2021
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +19,7 @@ public class EnemyMain : MonoBehaviour
     public Animator anim;
 
     
-
+    //take damage function
     public void LoseHealth(int amount)
     {
         Health -= amount;
@@ -34,6 +40,7 @@ public class EnemyMain : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //sets beginning stats depending on type of enemy
     void Start()
     {
         CurHealth = Health;

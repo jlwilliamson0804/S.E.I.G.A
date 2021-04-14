@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/* 
+ * Project: Creed and the Vow of Vengeance
+ * Joseph W. Alex A. Cameron O. Kheta K.
+ * Description: This script is used to trigger a melee attack and deal damage
+ * Date: April 2021
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
