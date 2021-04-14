@@ -13,11 +13,13 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 30f;
     public Rigidbody2D rb;
-    public int damageAmount = 20;
+    public int damageAmount = 30;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        
         //fires the projectile in the correct direction at the defined speed
         rb.velocity = transform.right * speed; 
     }
@@ -35,12 +37,16 @@ public class Projectile : MonoBehaviour
       EnemyMain enemy = hit.GetComponent<EnemyMain>();
       if(hit.tag == "wall" && hit != null)
         {
+
+            SFX.PlayFireball();
             Destroy(gameObject); //so it doesn't pass through walls
+            
         }
 
 
       if(enemy.gameObject.tag == "enemy" || enemy.gameObject.tag == "boss")
         {
+            SFX.PlayFireball();
             enemy.LoseHealth(damageAmount); // damages the enemy
             Destroy(gameObject);
         }

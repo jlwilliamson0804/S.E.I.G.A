@@ -52,7 +52,7 @@ public class PlayerMain : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
-            
+            SFX.PlayDeath();
             GetComponent<PlayerMovement>().enabled = false;
             gameObject.GetComponent<Animator>().Play("Player_Death");
             animator.SetBool("IsDead", true);
